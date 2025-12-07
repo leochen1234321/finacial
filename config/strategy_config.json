@@ -1,0 +1,92 @@
+{
+    "strategies": {
+        "ma_cross": {
+            "enabled": true,
+            "name": "双均线策略",
+            "description": "基于短期和长期均线交叉的趋势跟踪策略",
+            "params": {
+                "fast_period": 5,
+                "slow_period": 20
+            },
+            "stocks": ["000001", "600000", "600036"],
+            "position_pct": 0.25,
+            "stop_loss_pct": 0.08,
+            "take_profit_pct": 0.15
+        },
+        "macd": {
+            "enabled": true,
+            "name": "MACD策略",
+            "description": "基于MACD指标的动量策略",
+            "params": {
+                "fast_period": 12,
+                "slow_period": 26,
+                "signal_period": 9
+            },
+            "stocks": ["000002", "600519"],
+            "position_pct": 0.25,
+            "stop_loss_pct": 0.08,
+            "take_profit_pct": 0.15
+        },
+        "rsi": {
+            "enabled": false,
+            "name": "RSI策略",
+            "description": "基于RSI超买超卖的反转策略",
+            "params": {
+                "period": 14,
+                "oversold": 30,
+                "overbought": 70
+            },
+            "stocks": ["000858", "601318"],
+            "position_pct": 0.20,
+            "stop_loss_pct": 0.06,
+            "take_profit_pct": 0.12
+        },
+        "bollinger": {
+            "enabled": false,
+            "name": "布林带策略",
+            "description": "基于布林带突破的波动率策略",
+            "params": {
+                "period": 20,
+                "std_dev": 2.0
+            },
+            "stocks": ["600887", "000333"],
+            "position_pct": 0.20,
+            "stop_loss_pct": 0.07,
+            "take_profit_pct": 0.14
+        },
+        "kdj": {
+            "enabled": false,
+            "name": "KDJ策略",
+            "description": "基于KDJ指标的超买超卖策略",
+            "params": {
+                "k_period": 9,
+                "d_period": 3,
+                "j_period": 3,
+                "oversold": 20,
+                "overbought": 80
+            },
+            "stocks": ["601166", "600276"],
+            "position_pct": 0.20,
+            "stop_loss_pct": 0.06,
+            "take_profit_pct": 0.12
+        }
+    },
+    "global_settings": {
+        "backtest": {
+            "initial_cash": 100000,
+            "commission_rate": 0.0003,
+            "stamp_tax_rate": 0.001,
+            "slippage": 0.002,
+            "start_date": "2023-01-01",
+            "end_date": "2024-12-01"
+        },
+        "stock_pool": {
+            "market": ["sh", "sz"],
+            "exclude_st": true,
+            "exclude_new": true,
+            "new_days": 60,
+            "min_price": 5.0,
+            "max_price": 100.0
+        }
+    }
+}

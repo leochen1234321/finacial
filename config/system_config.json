@@ -1,0 +1,57 @@
+{
+    "system": {
+        "name": "A股量化交易系统",
+        "version": "1.0.0",
+        "debug": false,
+        "log_level": "INFO"
+    },
+    "trading": {
+        "broker": "ths",
+        "client_path": "C:\\同花顺\\xiadan.exe",
+        "trading_hours": {
+            "morning_start": "09:30",
+            "morning_end": "11:30",
+            "afternoon_start": "13:00",
+            "afternoon_end": "15:00"
+        },
+        "safe_trading_hours": {
+            "start": "09:45",
+            "end": "14:45"
+        },
+        "order_delay": 2.0,
+        "max_retry": 3
+    },
+    "risk_control": {
+        "max_daily_loss_pct": 0.05,
+        "max_single_position_pct": 0.30,
+        "max_total_position_pct": 0.80,
+        "max_holding_stocks": 3,
+        "default_stop_loss_pct": 0.10,
+        "default_take_profit_pct": 0.20,
+        "max_drawdown_pct": 0.15
+    },
+    "data": {
+        "database_path": "data/trading.db",
+        "cache_days": 365,
+        "realtime_interval": 3
+    },
+    "notification": {
+        "enabled": false,
+        "email": {
+            "smtp_server": "smtp.qq.com",
+            "smtp_port": 465,
+            "sender": "",
+            "password": "",
+            "receivers": []
+        },
+        "wechat": {
+            "enabled": false,
+            "corp_id": "",
+            "agent_id": "",
+            "secret": ""
+        }
+    },
+    "tesseract": {
+        "path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+    }
+}
